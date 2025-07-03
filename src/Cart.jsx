@@ -31,6 +31,7 @@ export default function ProjectCarousel() {
     }, 10);
   };
 
+  
   const stopAutoScroll = () => {
     clearInterval(autoScrollInterval.current);
   };
