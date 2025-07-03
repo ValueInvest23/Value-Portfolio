@@ -80,7 +80,7 @@ const handleSubmit = (e) => {
         playsInline
         className="w-full h-full object-cover filter drop-shadow-[0_0_30px_rgba(59,130,246,0.8)]"
       >
-        <source src="/src/assets/background1.mp4 " type="video/mp4" />
+        <source src="/background1.mp4 " type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 

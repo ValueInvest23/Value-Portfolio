@@ -3,12 +3,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 const projects = [
-  "/src/assets/image6.png",
-  "/src/assets/image1.jpg",
-  "/src/assets/image3.png",
-  "/src/assets/image4.jpg",
-  "/src/assets/image5.jpg",
-  "/src/assets/image7.jpg",
+  "/image6.png",
+  "/image1.jpg",
+  "/image3.png",
+  "/image4.jpg",
+  "/image5.jpg",
+  "/image7.jpg",
 ];
 
 export default function ProjectCarousel() {
@@ -31,7 +31,7 @@ export default function ProjectCarousel() {
     }, 10);
   };
 
-  
+
   const stopAutoScroll = () => {
     clearInterval(autoScrollInterval.current);
   };
