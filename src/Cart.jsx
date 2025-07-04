@@ -111,7 +111,7 @@ export default function ProjectCarousel() {
   }, []);
 
   return (
-    <div id="work" className="bg-black text-white py-12 px-4 overflow-hidden ">
+    <div id="work" className="bg-black text-white py-16 px-4 overflow-hidden ">
       <h2 className="text-3xl sm:text-4xl font-bold mb-10 text-center text-blue-400 drop-shadow-lg">
         Work
       </h2>
