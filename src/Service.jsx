@@ -37,33 +37,38 @@ const services = [
 
 const Services = () => {
   return (
-    <>
-      <section id="services" className="py-16 px-6 sm:px-10 lg:px-24 bg-black text-white overflow-x-hidden ">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-blue-500"> Services</h2>
-          <p className="text-gray-300 text-md sm:text-lg max-w-2xl mx-auto">
+    <div className="scroll-smooth">
+      <section id="services" className="py-16 px-6 sm:px-10 lg:px-24 bg-gradient-to-b from-black via-black to-[#090914] text-white overflow-x-hidden min-h-screen">
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-blue-400 tracking-tight"> Services</h2>
+          <p className="text-gray-400 text-md sm:text-lg max-w-2xl mx-auto">
             I provide a complete range of web development services to build modern, scalable, and beautiful websites.
           </p>
-        </div>
+        </motion.div>
+
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{ scale: 1.03, y: -8, rotateX: 8, rotateY: 4 }}
-              whileTap={{ scale: 1.03, y: -8, rotateX: 8, rotateY: 4 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ scale: 1.05, y: -6 }}
+              transition={{ duration: 0.5, delay: index * 0.15, ease: "easeOut" }}
               viewport={{ once: true }}
-              className="relative bg-black-900 rounded-2xl shadow-lg p-8 overflow-hidden transition group cursor-pointer"
+              className="relative bg-[#0f172a] rounded-2xl shadow-xl p-8 overflow-hidden transition group cursor-pointer hover:shadow-blue-500/30"
             >
               <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-blue-500 group-hover:opacity-100 opacity-0 transition-all duration-500 pointer-events-none" />
-              <div className="absolute -inset-4 bg-blue-500 opacity-10 blur-2xl rounded-full group-hover:opacity-20 transition-opacity duration-700 z-0" />
+              <div className="absolute -inset-4 bg-blue-900 opacity-10 blur-2xl rounded-full group-hover:opacity-20 transition-opacity duration-700 z-0" />
               <div className="relative z-10">
-                <div className="mb-4 group-hover:rotate-[6deg] transition-transform duration-300 ease-in-out">
+                <div className="mb-4 transition-transform duration-300 ease-in-out">
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors duration-300 hover:text-blue-400">
+                <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors duration-300">
                   {service.title}
                 </h3>
                 <p className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
@@ -75,43 +80,42 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section id="benefits" className="py-20 px-6 sm:px-10 lg:px-24 bg-black text-white">
+      <motion.section
+        id="benefits"
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.9, ease: "easeInOut" }}
+        className="py-30 pt-42 px-6 sm:px-10  lg:px-24 bg-gradient-to-b from-[#0A0D1C] via-black to-black text-white min-h-screen"
+      >
         <div className="text-center mb-12">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-blue-500">Benifits</h2>
+          <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-blue-400 tracking-tight">Benefits</h2>
           <p className="text-gray-400 text-md sm:text-lg max-w-2xl mx-auto">
             Discover the core values and advantages of collaborating with a passionate and experienced developer.
           </p>
         </div>
 
         <div className="space-y-12 max-w-4xl mx-auto">
-          <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} className="border-l-4 border-blue-500 pl-6 ">
-            <h3 className="text-2xl font-semibold mb-2">🔍 Attention to Detail</h3>
-            <p className="text-gray-400">Every line of code is crafted with precision, ensuring quality and long-term stability.</p>
-          </motion.div>
-
-          <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.2 }} className="border-l-4 border-blue-500 pl-6">
-            <h3 className="text-2xl font-semibold mb-2">⚡ Fast & Reliable Delivery</h3>
-            <p className="text-gray-400">Projects are delivered on time, with consistent communication and professional workflow.</p>
-          </motion.div>
-
-          <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.4 }} className="border-l-4 border-blue-500 pl-6">
-            <h3 className="text-2xl font-semibold mb-2">🌐 Modern Tech Stack</h3>
-            <p className="text-gray-400">Always up-to-date with the latest frameworks and best practices in frontend development.</p>
-          </motion.div>
-
-          <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.6 }} className="border-l-4 border-blue-500 pl-6">
-            <h3 className="text-2xl font-semibold mb-2">💬 Transparent Communication</h3>
-            <p className="text-gray-400">You’re always in the loop with clear, frequent updates throughout the project lifecycle.</p>
-          </motion.div>
-
-          <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.8 }} className="border-l-4 border-blue-500 pl-6">
-            <h3 className="text-2xl font-semibold mb-2">🎯 Goal-Oriented Results</h3>
-            <p className="text-gray-400">Focused on delivering results that match your business objectives, not just visuals.</p>
-          </motion.div>
+          {[
+            ["🔍 Attention to Detail", "Every line of code is crafted with precision, ensuring quality and long-term stability."],
+            ["⚡ Fast & Reliable Delivery", "Projects are delivered on time, with consistent communication and professional workflow."],
+            ["🌐 Modern Tech Stack", "Always up-to-date with the latest frameworks and best practices in frontend development."],
+            ["💬 Transparent Communication", "You’re always in the loop with clear, frequent updates throughout the project lifecycle."],
+            ["🎯 Goal-Oriented Results", "Focused on delivering results that match your business objectives, not just visuals."]
+          ].map(([title, desc], idx) => (
+            <motion.div
+              key={title}
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: idx * 0.2, ease: "easeOut" }}
+              className="border-l-4 border-blue-500 pl-6 hover:border-white transition-colors duration-300"
+            >
+              <h3 className="text-2xl font-semibold mb-2">{title}</h3>
+              <p className="text-gray-400">{desc}</p>
+            </motion.div>
+          ))}
         </div>
-      </section>
-    </>
+      </motion.section>
+    </div>
   );
 };
 
