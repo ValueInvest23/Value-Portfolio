@@ -111,6 +111,7 @@ export default function ProjectCarousel() {
   }, []);
 
   return (
+     <div className="scroll-smooth">
     <motion.div
       id="work"
       initial={{ opacity: 0, y: 80 }}
@@ -154,5 +155,6 @@ export default function ProjectCarousel() {
         </motion.div>
       </div>
     </motion.div>
+    </div>
   );
 }
