@@ -4,7 +4,7 @@ import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons
 
 const projects = [
   "/image6.png",
-  "/image1.jpg",
+  "/image5.jpg",
   "/image3.png",
   "/image4.jpg",
   "/image5.jpg",
