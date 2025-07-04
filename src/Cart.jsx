@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 
 const projects = [
   "/image6.png",
@@ -14,8 +14,6 @@ const projects = [
 
 export default function ProjectCarousel() {
   const scrollRef = useRef(null);
-  const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true });
   const isDragging = useRef(false);
   const startX = useRef(0);
   const scrollLeft = useRef(0);
@@ -29,7 +27,7 @@ export default function ProjectCarousel() {
       if (slider.scrollLeft + 1 >= slider.scrollWidth - slider.clientWidth) {
         slider.scrollTo({ left: 0, behavior: "auto" });
       } else {
-        slider.scrollLeft += 2;
+        slider.scrollLeft += 0.5;
       }
     }, 10);
   };
@@ -114,42 +112,42 @@ export default function ProjectCarousel() {
 
   return (
     <motion.div
-      ref={sectionRef}
       id="work"
-      initial={{ opacity: 0, y: 100 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      initial={{ opacity: 0, y: 80 }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1.2, ease: "easeOut" }}
-      className="relative py-16 px-4 overflow-hidden bg-black no-scrollbar"
+      className="bg-black text-white py-16 px-4 overflow-hidden"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-black via-black to-[#0f172a] opacity-80 animate-[pulse_18s_infinite] z-0"></div>
       <motion.h2
         initial={{ opacity: 0, scale: 0.8 }}
-        animate={isInView ? { opacity: 1, scale: 1 } : {}}
+        animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="relative z-10 text-3xl sm:text-4xl font-bold mb-10 text-center text-blue-400 drop-shadow-lg"
+        className="text-3xl sm:text-4xl font-bold mb-10 text-center text-blue-400 drop-shadow-lg"
       >
         Work
       </motion.h2>
-      <div className="relative z-10">
+      <div className="relative">
         <motion.div
           ref={scrollRef}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
-          className="flex gap-4 sm:gap-6 px-2 sm:px-6 overflow-x-auto scroll-smooth cursor-grab active:cursor-grabbing select-none no-scrollbar"
+          className="flex gap-4 sm:gap-6 px-2 sm:px-6 overflow-hidden cursor-grab active:cursor-grabbing select-none"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, ease: "easeInOut" }}
         >
           {projects.map((src, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 50, scale: 0.95 }}
-              animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
-              whileHover={{ scale: 1.03, boxShadow: "0px 0px 24px rgba(59,130,246,0.45)" }}
-              className="flex-shrink-0 rounded-2xl overflow-hidden bg-[#0d0d0d] p-4 sm:p-6 min-w-[280px] sm:min-w-[360px] md:min-w-[400px] min-h-[360px] sm:min-h-[420px] md:min-h-[480px] shadow-xl transform transition duration-500 ease-in-out"
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              className="flex-shrink-0 rounded-2xl overflow-hidden bg-[#0d0d0d] p-4 sm:p-6 min-w-[300px] sm:min-w-[400px] min-h-[400px] sm:min-h-[480px] shadow-xl hover:shadow-[0_0_40px_rgba(59,130,246,0.8)] transform hover:scale-105 transition duration-700 ease-in-out relative before:content-[''] before:absolute before:inset-y-0 before:right-[-15px] before:w-8 before:rounded-full before:shadow-[20px_0_40px_rgba(59,130,246,0.6)] after:content-[''] after:absolute after:inset-y-0 after:left-[-15px] after:w-8 after:rounded-full after:shadow-[-20px_0_40px_rgba(59,130,246,0.3)]"
             >
               <img
                 src={src}
                 alt={`Project ${index + 1}`}
-                className="w-full h-120 object-cover rounded-lg shadow-xl"
+                className="w-full h-120 object-cover rounded-lg shadow-2xl"
               />
             </motion.div>
           ))}
