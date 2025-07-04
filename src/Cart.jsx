@@ -27,7 +27,7 @@ export default function ProjectCarousel() {
       if (slider.scrollLeft + 1 >= slider.scrollWidth - slider.clientWidth) {
         slider.scrollTo({ left: 0, behavior: "auto" });
       } else {
-        slider.scrollLeft += 0.5;
+        slider.scrollLeft += 1;
       }
     }, 10);
   };
