@@ -4,6 +4,7 @@ import Contact from './Contact';
 import Footer from './Footer';
 import Service from './Service';
 import HeroSection from './Herosection';
+import Questions from './Questions';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <HeroSection />
       <Cart />
       <Service />
+      <Questions />
       <Contact />
       <Footer />
   </div>

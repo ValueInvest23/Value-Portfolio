@@ -66,6 +66,10 @@ const Navbar = () => {
             <span className="hover:text-blue-400 transition-colors duration-300">Benefits</span>
             <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
           </a>
+         <a href="#F&Q" className="relative group">
+            <span className="hover:text-blue-400 transition-colors duration-300">Faq</span>
+            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
+          </a>
         </motion.div>
 
         {/* Contact Button (Desktop) */}
@@ -105,6 +109,10 @@ const Navbar = () => {
         </a>
         <a href="#benefits" className="relative group transition-all duration-300" onClick={toggleMenu}>
           <span className="hover:text-blue-400 transition-colors duration-300">Benefits</span>
+          <span className="block w-0 h-[2px] bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="#F&Q" className="relative group transition-all duration-300" onClick={toggleMenu}>
+          <span className="hover:text-blue-400 transition-colors duration-300">Faq</span>
           <span className="block w-0 h-[2px] bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
         </a>
          <a
