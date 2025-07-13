@@ -57,24 +57,35 @@ const Services = () => {
               key={index}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{ scale: 1.05, y: -6 }}
+              whileHover="hover"
               transition={{ duration: 0.5, delay: index * 0.15, ease: "easeOut" }}
               viewport={{ once: true }}
               className="relative bg-[#0f172a] rounded-2xl shadow-xl p-8 overflow-hidden transition group cursor-pointer hover:shadow-blue-500/30"
+              variants={{
+                hover: { scale: 1.05, y: -6 }
+              }}
             >
               <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-blue-500 group-hover:opacity-100 opacity-0 transition-all duration-500 pointer-events-none" />
               <div className="absolute -inset-4 bg-blue-900 opacity-10 blur-2xl rounded-full group-hover:opacity-20 transition-opacity duration-700 z-0" />
-              <div className="relative z-10">
-                <div className="mb-4 transition-transform duration-300 ease-in-out">
+              <motion.div
+                className="relative z-10"
+                whileHover="hover"
+              >
+                <motion.div
+                  className="mb-4 transition-transform duration-300 ease-in-out"
+                  variants={{
+                    hover: { y: -10 }
+                  }}
+                >
                   {service.icon}
-                </div>
+                </motion.div>
                 <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors duration-300">
                   {service.title}
                 </h3>
                 <p className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
                   {service.description}
                 </p>
-              </div>
+              </motion.div>
             </motion.div>
           ))}
         </div>
