@@ -58,6 +58,7 @@ const Services = () => {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               whileHover="hover"
+              whileTap="hover"
               transition={{ duration: 0.5, delay: index * 0.15, ease: "easeOut" }}
               viewport={{ once: true }}
               className="relative bg-[#0f172a] rounded-2xl shadow-xl p-8 overflow-hidden transition group cursor-pointer hover:shadow-blue-500/30"
@@ -69,7 +70,7 @@ const Services = () => {
               <div className="absolute -inset-4 bg-blue-900 opacity-10 blur-2xl rounded-full group-hover:opacity-20 transition-opacity duration-700 z-0" />
               <motion.div
                 className="relative z-10"
-                whileHover="hover"
+                variants={{ hover: {} }}
               >
                 <motion.div
                   className="mb-4 transition-transform duration-300 ease-in-out"
